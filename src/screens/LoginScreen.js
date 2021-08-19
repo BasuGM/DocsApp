@@ -23,9 +23,11 @@ const LoginScreen = ({navigation}) => {
 
         {/* Button Holder  */}
         <View style={styles.buttonHolder}>
-          <View style={styles.buttonTileLogin}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Home')}
+           style={styles.buttonTileLogin}>
             <Text style={styles.buttonTileLoginText}>Log in</Text>
-          </View>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate('Home')}
             style={styles.buttonTileSignUp}>
@@ -51,14 +53,11 @@ const styles = StyleSheet.create({
 
   //   Image
   image: {
-    // borderWidth: 1,
     width: '100%',
     height: '65%',
     borderBottomLeftRadius: 60,
   },
   imageImg:{
-    
-    // borderWidth: 1,
     width: '100%',
     height: '100%',
     borderBottomLeftRadius: 60,
@@ -66,7 +65,6 @@ const styles = StyleSheet.create({
   imageText1: {
     position: 'absolute',
     fontSize: 22,
-    // fontWeight: 'bold',
     bottom: 60,
     left: 30,
   },
@@ -80,7 +78,6 @@ const styles = StyleSheet.create({
   // Bottom Part
   bottomPart: {
     width: '100%',
-    // borderWidth: 1,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -88,24 +85,20 @@ const styles = StyleSheet.create({
   },
 
   imageSlider: {
-    // borderWidth: 1,
     width: '100%',
     height: 60,
-    // borderBottomLeftRadius: 60,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 160,
   },
   imageSliderDotFirst: {
-    // borderWidth: 1,
     width: 10,
     height: 10,
     backgroundColor: 'white',
     borderRadius: 5,
   },
   imageSliderDot: {
-    // borderWidth: 1,
     width: 5,
     height: 5,
     backgroundColor: 'white',
@@ -115,7 +108,6 @@ const styles = StyleSheet.create({
   //   Button Holder
   buttonHolder: {
     flexDirection: 'row',
-    // justifyContent: 'space-around'
   },
 
   // Login Button
@@ -127,7 +119,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'white'
     borderColor: 'white',
   },
   buttonTileLoginText: {
@@ -138,14 +129,12 @@ const styles = StyleSheet.create({
 
   // Sign Up Button
   buttonTileSignUp: {
-    // borderWidth: 1,
     height: 60,
     width: 140,
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'white'
     backgroundColor: 'white',
   },
   buttonTileSignUpText: {

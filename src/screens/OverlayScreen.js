@@ -4,7 +4,7 @@ import {Icon} from 'react-native-elements';
 
 const OverlayScreen = () => {
   return (
-    <View style={styles.container}>
+    // <View style={styles.container}>
       <View style={styles.overlayHolder}>
         {/* Overlay Title  */}
         <View style={styles.overlayTitle}>
@@ -69,7 +69,7 @@ const OverlayScreen = () => {
           </View>
         </View>
       </View>
-    </View>
+    // </View>
   );
 };
 export default OverlayScreen;
@@ -77,35 +77,36 @@ export default OverlayScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 
   // Overlay Holder
   overlayHolder: {
     position: 'absolute',
     bottom: 0,
-    // borderWidth: 1,
     width: '100%',
     height: 500,
     padding: 20,
     backgroundColor: '#fcfcfc',
-    // borderTopEndRadius: 20,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+    borderTopRightRadius: 40,
+    borderTopLeftRadius:40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 10,
   },
 
   // Overlay Title
-  overlayTitle: {},
+  overlayTitle: {
+    marginTop: 10
+  },
   overlayTitleText: {
     fontSize: 22,
     fontWeight: 'bold',
+    alignSelf: 'flex-start'
   },
 
   // Doctor Tab
   doctorTab: {
     marginTop: 20,
-    // borderWidth: 1,
     flexDirection: 'row',
     padding: 20,
     borderRadius: 20,
@@ -120,7 +121,6 @@ const styles = StyleSheet.create({
   },
   doctorTabRight: {
     marginHorizontal: 20,
-    // alignItems: 'center'
     justifyContent: 'space-around',
   },
   doctorTabName: {},
@@ -145,7 +145,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   doctorTabPhoneIcon: {
-    // borderWidth: 1,
     height: 20,
     width: 20,
   },
@@ -155,7 +154,6 @@ const styles = StyleSheet.create({
 
   // Time Tab
   timeTab: {
-    // borderWidth: 1,
     width: '100%',
     height: 200,
     justifyContent: 'center',
@@ -186,7 +184,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
-    // borderWidth: 1,
     width: 20,
     height: 20,
     borderRadius: 10,
@@ -199,6 +196,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   timeTabTitleUnderline: {
+    marginLeft: 5,
     textDecorationLine: 'underline',
   },
 
@@ -218,7 +216,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'white'
     borderColor: 'grey',
   },
   buttonTileDetailText: {
@@ -229,16 +226,13 @@ const styles = StyleSheet.create({
 
   // Sign Up Button
   buttonTileCall: {
-    // borderWidth: 1,
     height: 60,
     width: 140,
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'white'
     backgroundColor: '#47d7d7',
-    // color: '',
   },
   buttonTileCallText: {
     color: 'white',
