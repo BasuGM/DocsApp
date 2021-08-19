@@ -1,8 +1,66 @@
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Icon} from 'react-native-elements';
 
-const HomeScreen = ({ navigation }) => {
+const Tab = createBottomTabNavigator();
+
+function HomeScreen() {
+  return (
+    <Tab.Navigator
+      screenOptions={{headerShown: false}}
+      tabBarOptions={{showIcon: true}}>
+      <Tab.Screen
+        name="Home"
+        component={HomeComponent}
+        options={{
+          tabBarIcon: tabInfo => (
+            <Icon name="stepbackward" type="antdesign" color="#517fa4" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home2"
+        component={HomeComponent}
+        options={{
+          tabBarIcon: tabInfo => (
+            <Icon name="stepbackward" type="antdesign" color="#517fa4" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home3"
+        component={HomeComponent}
+        options={{
+          tabBarIcon: tabInfo => (
+            <Icon name="stepbackward" type="antdesign" color="#517fa4" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home4"
+        component={HomeComponent}
+        options={{
+          tabBarIcon: tabInfo => (
+            <Icon name="stepbackward" type="antdesign" color="#517fa4" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home5"
+        component={HomeComponent}
+        options={{
+          tabBarIcon: tabInfo => (
+            <Icon name="stepbackward" type="antdesign" color="#517fa4" />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+const HomeComponent = ({navigation}) => {
   const TaskTab = () => {
     return (
       <View style={styles.taskTab}>
@@ -23,7 +81,9 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.headerMidTitle}>Hi Dr,</Text>
           <Text style={styles.headerMidTitle2}> How're you today? </Text>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Overlay')} style={styles.headerNotification}></TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Overlay')}
+          style={styles.headerNotification}></TouchableOpacity>
       </View>
       {/* <Text>WORKING HERE</Text> */}
 
@@ -134,9 +194,7 @@ const styles = StyleSheet.create({
   taskNumber: {},
 
   // Task Tab
-  taskTabMain: {
-      
-  },
+  taskTabMain: {},
   taskTabHolder: {
     flexDirection: 'row',
   },
@@ -144,17 +202,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     height: 140,
     width: 140,
-    margin: 20
+    margin: 20,
   },
   taskTabIcon: {},
   taskTabTitle: {},
 });
-
-{
-  /* <Text>Overlay</Text>
-      <Text>Text</Text>
-      <Text>Call Tab</Text>
-      <Text>56 Seconds</Text>
-      <Text>I'm not ready</Text>
-      <Text>Call now</Text> */
-}

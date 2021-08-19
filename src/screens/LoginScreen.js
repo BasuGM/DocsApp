@@ -1,25 +1,35 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
+      {/* Image  */}
       <View style={styles.image}>
-        <Text style={styles.imageText}>Image</Text>
+        <Image style={styles.imageImg} source={{uri: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'}}  />
+        <Text style={styles.imageText1}>Help millions of people</Text>
+        <Text style={styles.imageText2}>everywhere, everytime!</Text>
       </View>
-      {/* <Text>WORKING HERE</Text> */}
+
+      {/* Bottom Part  */}
       <View style={styles.bottomPart}>
-        <View>
-          <Text>Image Slider</Text>
+        {/* Image Slider  */}
+        <View style={styles.imageSlider}>
+          <View style={styles.imageSliderDotFirst}></View>
+          <View style={styles.imageSliderDot}></View>
+          <View style={styles.imageSliderDot}></View>
+          <View style={styles.imageSliderDot}></View>
         </View>
+
+        {/* Button Holder  */}
         <View style={styles.buttonHolder}>
-          <View style={styles.buttonTile}>
-            <Text style={styles.buttonTileText}>Log in</Text>
+          <View style={styles.buttonTileLogin}>
+            <Text style={styles.buttonTileLoginText}>Log in</Text>
           </View>
           <TouchableOpacity
             onPress={() => navigation.navigate('Home')}
-            style={styles.buttonTile}>
-            <Text style={styles.buttonTileText}> Sign Up</Text>
+            style={styles.buttonTileSignUp}>
+            <Text style={styles.buttonTileSignUpText}> Sign Up</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.patientTitle}>
@@ -27,7 +37,6 @@ const LoginScreen = ({navigation}) => {
           <Text style={styles.patientTitleUnderline}>Get Here! </Text>
         </View>
       </View>
-      {/* <Text>WORKING HERE</Text> */}
     </View>
   );
 };
@@ -37,29 +46,70 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: '#47d7d7',
   },
 
   //   Image
   image: {
-    borderWidth: 1,
+    // borderWidth: 1,
     width: '100%',
-    height: '60%',
+    height: '65%',
     borderBottomLeftRadius: 60,
   },
-  imageText: {
+  imageImg:{
+    
+    // borderWidth: 1,
+    width: '100%',
+    height: '100%',
+    borderBottomLeftRadius: 60,
+  },
+  imageText1: {
     position: 'absolute',
-    bottom: 40,
-    left: 50,
+    fontSize: 22,
+    // fontWeight: 'bold',
+    bottom: 60,
+    left: 30,
+  },
+  imageText2: {
+    position: 'absolute',
+    fontSize: 22,
+    bottom: 30,
+    left: 30,
   },
 
   // Bottom Part
   bottomPart: {
     width: '100%',
-    borderWidth: 1,
+    // borderWidth: 1,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
     marginVertical: 30,
+  },
+
+  imageSlider: {
+    // borderWidth: 1,
+    width: '100%',
+    height: 60,
+    // borderBottomLeftRadius: 60,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 160,
+  },
+  imageSliderDotFirst: {
+    // borderWidth: 1,
+    width: 10,
+    height: 10,
+    backgroundColor: 'white',
+    borderRadius: 5,
+  },
+  imageSliderDot: {
+    // borderWidth: 1,
+    width: 5,
+    height: 5,
+    backgroundColor: 'white',
+    borderRadius: 2.5,
   },
 
   //   Button Holder
@@ -67,7 +117,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     // justifyContent: 'space-around'
   },
-  buttonTile: {
+
+  // Login Button
+  buttonTileLogin: {
     borderWidth: 1,
     height: 60,
     width: 140,
@@ -75,15 +127,44 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
+    // backgroundColor: 'white'
+    borderColor: 'white',
   },
-  buttonTileText: {},
+  buttonTileLoginText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+
+  // Sign Up Button
+  buttonTileSignUp: {
+    // borderWidth: 1,
+    height: 60,
+    width: 140,
+    margin: 10,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'white'
+    backgroundColor: 'white',
+  },
+  buttonTileSignUpText: {
+    color: '#47d7d7',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 
   //   Patient Title
   patientTitle: {
     flexDirection: 'row',
   },
-  patientTitleText: {},
+  patientTitleText: {
+    color: 'white',
+    fontSize: 16,
+  },
   patientTitleUnderline: {
+    color: 'white',
+    fontSize: 16,
     textDecorationLine: 'underline',
   },
 });
